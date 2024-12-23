@@ -1,0 +1,435 @@
+/* Variables CSS personnalisées */
+:root {
+    --primary-color: #0073e6;
+    --primary-dark: #005bb5;
+    --secondary-color: #0044cc;
+    --text-color: #333;
+    --bg-light: #f4f4f9;
+    --bg-white: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --spacing: clamp(1rem, 2vw, 2rem);
+    --container-width: 1200px;
+    --border-radius: 8px;
+  }
+  
+  /* Reset modernisé */
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Styles de base améliorés */
+  body {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+  }
+  
+  /* Container plus flexible */
+  .container {
+    width: min(90%, var(--container-width));
+    margin-inline: auto;
+    padding: var(--spacing);
+  }
+  
+  /* Header moderne */
+  header {
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 10px var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .main-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: clamp(1rem, 3vw, 2rem);
+    list-style: none;
+    padding: 1rem;
+  }
+  
+  .main-nav a {
+    color: var(--bg-white);
+    text-decoration: none;
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    position: relative;
+    padding: 0.5em 0;
+  }
+  
+  .main-nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--bg-white);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .main-nav a:hover::after,
+  .main-nav a:focus::after {
+    transform: scaleX(1);
+  }
+  
+  /* Hero section améliorée */
+  .hero-section {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    padding: clamp(3rem, 10vh, 8rem) 0;
+    color: var(--bg-white);
+  }
+  
+  .hero-section h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-section video {
+    width: 100%;
+    max-width: 800px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Grille de compétences améliorée */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: var(--spacing);
+  }
+  
+  .skill-item {
+    background: var(--bg-white);
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: transform 0.3s ease;
+  }
+  
+  .skill-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Barre de progression améliorée */
+  .skill-bar {
+    height: 10px;
+    background: #e1e1e1;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .skill-bar::after {
+    content: '';
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
+    transform-origin: left;
+    animation: loadSkill 1s ease-out forwards;
+  }
+  
+  @keyframes loadSkill {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(0.9); }
+  }
+  
+  /* Formulaire de contact modernisé */
+  .contact-form {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.8em 1em;
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
+    background: var(--bg-light);
+    transition: border-color 0.3s ease;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+  
+  .contact-form button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1em 2em;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background: var(--primary-dark);
+  }
+  
+  /* Footer moderne */
+  .footer {
+    background: linear-gradient(180deg, #222, #111);
+    color: var(--bg-white);
+    padding: clamp(2rem, 5vh, 4rem) 0;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .social-links a {
+    color: var(--bg-white);
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    transform: translateY(-3px);
+    color: var(--primary-color);
+  }
+  
+  /* Media queries optimisées */
+  @media (max-width: 768px) {
+    .main-nav ul {
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+    }
+    
+    .contact-form {
+      width: 90%;
+    }
+  }
+  
+  /* Préférence de mouvement réduit */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    :root {
+        /* Palette de couleurs principale */
+        --primary-dark: #1a237e;    /* Bleu foncé */
+        --primary: #303f9f;         /* Bleu */
+        --primary-light: #3f51b5;   /* Bleu clair */
+        --accent: #ff4081;          /* Rose */
+        --accent-dark: #f50057;     /* Rose foncé */
+        
+        /* Couleurs neutres */
+        --white: #ffffff;
+        --gray-100: #f8f9fa;
+        --gray-200: #e9ecef;
+        --gray-300: #dee2e6;
+        --gray-400: #ced4da;
+        --gray-500: #adb5bd;
+        --gray-600: #6c757d;
+        --gray-700: #495057;
+        --gray-800: #343a40;
+        --gray-900: #212529;
+        --black: #000000;
+      
+        /* Couleurs sémantiques */
+        --success: #28a745;
+        --info: #17a2b8;
+        --warning: #ffc107;
+        --danger: #dc3545;
+      }
+      
+      /* Styles de base */
+      body {
+        background-color: var(--gray-100);
+        color: var(--gray-900);
+      }
+      
+      /* Header */
+      header {
+        background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+        color: var(--white);
+      }
+      
+      .main-nav a {
+        color: var(--white);
+      }
+      
+      .main-nav a:hover {
+        color: var(--gray-200);
+      }
+      
+      /* Hero Section */
+      .hero-section {
+        background: linear-gradient(45deg, var(--primary), var(--primary-light));
+        color: var(--white);
+      }
+      
+      /* About Section */
+      .about-section {
+        background-color: var(--white);
+      }
+      
+      .skill-item {
+        background-color: var(--gray-100);
+        border: 1px solid var(--gray-300);
+        transition: all 0.3s ease;
+      }
+      
+      .skill-item:hover {
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        border-color: var(--primary-light);
+      }
+      
+      .skill-bar {
+        background-color: var(--gray-300);
+      }
+      
+      .skill-bar::after {
+        background: linear-gradient(90deg, var(--primary), var(--accent));
+      }
+      
+      /* Projects Section */
+      .work-section {
+        background-color: var(--gray-100);
+      }
+      
+      .project-card {
+        background-color: var(--white);
+        border: 1px solid var(--gray-300);
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      }
+      
+      .project-card:hover {
+        border-color: var(--primary);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+      }
+      
+      .project-tech {
+        color: var(--gray-600);
+      }
+      
+      .project-year {
+        color: var(--gray-700);
+      }
+      
+      .project-link {
+        color: var(--primary);
+      }
+      
+      .project-link:hover {
+        color: var(--primary-dark);
+      }
+      
+      /* CV Section */
+      .cv-download-btn {
+        background-color: var(--accent);
+        color: var(--white);
+      }
+      
+      .cv-download-btn:hover {
+        background-color: var(--accent-dark);
+      }
+      
+      /* Contact Form */
+      .contact-form input,
+      .contact-form textarea {
+        border: 2px solid var(--gray-300);
+        background-color: var(--white);
+      }
+      
+      .contact-form input:focus,
+      .contact-form textarea:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(48, 63, 159, 0.1);
+      }
+      
+      .contact-form button {
+        background: linear-gradient(45deg, var(--primary), var(--primary-light));
+        color: var(--white);
+      }
+      
+      .contact-form button:hover {
+        background: linear-gradient(45deg, var(--primary-dark), var(--primary));
+      }
+      
+      /* Footer */
+      .footer {
+        background: linear-gradient(to bottom, var(--gray-800), var(--gray-900));
+        color: var(--gray-300);
+      }
+      
+      .social-links a {
+        color: var(--gray-400);
+        transition: all 0.3s ease;
+      }
+      
+      .social-links a:hover {
+        color: var(--accent);
+        transform: translateY(-3px);
+      }
+      
+      /* États des boutons */
+      button:disabled,
+      input[type="submit"]:disabled {
+        background: var(--gray-400);
+        cursor: not-allowed;
+      }
+      
+      /* Messages d'état */
+      .success-message {
+        color: var(--success);
+      }
+      
+      .error-message {
+        color: var(--danger);
+      }
+      
+      /* Effets de survol globaux */
+      .hover-effect {
+        transition: all 0.3s ease;
+      }
+      
+      .hover-effect:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      }
+      
+      /* Mode sombre */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --primary: #5c6bc0;
+          --primary-light: #7986cb;
+        }
+      
+        body {
+          background-color: var(--gray-900);
+          color: var(--gray-100);
+        }
+      
+        .project-card {
+          background-color: var(--gray-800);
+          border-color: var(--gray-700);
+        }
+      
+        .skill-item {
+          background-color: var(--gray-800);
+          border-color: var(--gray-700);
+        }
+      }
+  }

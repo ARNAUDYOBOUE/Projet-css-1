@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio professionnel d'Arnaud Yoboue - Développeur Web et Data Analyst">
+    <meta name="keywords" content="développeur web, data analyst, portfolio, Arnaud Yoboue">
+    <title>Arnaud Yoboue | Développeur Web & Data Analyst</title>
+    <link rel="stylesheet" href="style/css/style.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="main-nav" aria-label="Navigation principale">
+                <ul>
+                    <li><a href="#accueil" aria-current="page">Accueil</a></li>
+                    <li><a href="#about">À Propos</a></li>
+                    <li><a href="#work">Travaux</a></li>
+                    <li><a href="#cv">CV</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="accueil" class="hero-section">
+            <div class="container">
+                <h1>Arnaud Yoboue</h1>
+                <p class="subtitle">Développeur Web & Data Analyst</p>
+                <p class="intro">Bienvenue sur mon portfolio professionnel</p>
+                <video width="400" controls preload="metadata" poster="assets/video-poster.jpg">
+                    <source src="videos/video1.mp4" type="video/mp4">
+                    <track kind="captions" src="videos/captions.vtt" srclang="fr" label="Français">
+                    <p>Votre navigateur ne supporte pas la vidéo. <a href="videos/video1.mp4">Télécharger la vidéo</a></p>
+                </video>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>À Propos de Moi</h2>
+                <p>Passionné par le développement web, la data analytique et le design numérique.</p>
+                
+                <div class="skills">
+                    <h3>Compétences</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <span class="skill-name">HTML5 & CSS3</span>
+                            <div class="skill-bar" data-level="90"></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar" data-level="85"></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Design Responsive</span>
+                            <div class="skill-bar" data-level="80"></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">UX/UI Design</span>
+                            <div class="skill-bar" data-level="75"></div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Power BI</span>
+                            <div class="skill-bar" data-level="85"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="work-section">
+            <div class="container">
+                <h2>Mes Travaux</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <h3>Application de Gestion</h3>
+                        <div class="project-tech">React, Node.js</div>
+                        <p class="project-year">2024</p>
+                        <a href="#" class="project-link" aria-label="Voir le projet Application de Gestion">En savoir plus</a>
+                    </article>
+                    <article class="project-card">
+                        <h3>Site E-commerce</h3>
+                        <div class="project-tech">PHP, MySQL</div>
+                        <p class="project-year">2023</p>
+                        <a href="#" class="project-link" aria-label="Voir le projet Site E-commerce">En savoir plus</a>
+                    </article>
+                    <article class="project-card">
+                        <h3>Data Analytique</h3>
+                        <div class="project-tech">Power BI</div>
+                        <p class="project-year">2024</p>
+                        <a href="#" class="project-link" aria-label="Voir le projet Data Analytique">En savoir plus</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="cv" class="cv-section">
+            <div class="container">
+                <h2>Curriculum Vitae</h2>
+                <a href="https://drive.google.com/file/d/19otSnfJX8pmqlfABz1pNeI374_oeJRdE/view?usp=sharing" 
+                   class="cv-download-btn" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                    Télécharger mon CV (PDF)
+                </a>
+                
+                <div class="experience">
+                    <h3>Expérience Professionnelle</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <time datetime="2024">2024</time>
+                            <h4>Data Analyste</h4>
+                            <p>Gomycode</p>
+                        </div>
+                        <div class="timeline-item">
+                            <time datetime="2022">2022-2023</time>
+                            <h4>Développeur Web Senior</h4>
+                            <p>Uniskip</p>
+                        </div>
+                        <div class="timeline-item">
+                            <time datetime="2021">2021-2022</time>
+                            <h4>Développeur Front-end</h4>
+                            <p>Luxe Voyage</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Contactez-moi</h2>
+                <form class="contact-form" action="/submit" method="POST">
+                    <div class="form-group">
+                        <label for="nom">Nom</label>
+                        <input type="text" 
+                               id="nom" 
+                               name="nom" 
+                               required 
+                               minlength="2"
+                               placeholder="Votre nom"
+                               autocomplete="name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" 
+                               id="email" 
+                               name="email" 
+                               required
+                               placeholder="votre@email.com"
+                               autocomplete="email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" 
+                                  name="message" 
+                                  required
+                                  minlength="10"
+                                  placeholder="Votre message..."
+                                  rows="5"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        Envoyer le message
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">© 2024 Arnaud Yoboue | Tous droits réservés</p>
+                <nav class="social-links" aria-label="Réseaux sociaux">
+                    <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <span class="visually-hidden">LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <span class="visually-hidden">GitHub</span>
+                    </a>
+                </nav>
+            </div>
+            
+            <audio controls preload="metadata">
+                <source src="audios/AUDIO.mp3" type="audio/mpeg">
+                <p>Votre navigateur ne supporte pas l'audio. <a href="audios/AUDIO.mp3">Télécharger l'audio</a></p>
+            </audio>
+        </div>
+    </footer>
+</body>
+</html>
